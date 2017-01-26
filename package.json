@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "NODE_PATH=. node bin/www",
-    "stop": "pkill --signal SIGINT -f ide-jutge",
+    "stop": "pkill --signal SIGINT -f ide-jutge-local",
     "postinstall": "patch node_modules/ws/lib/Sender.js Sender.patch"
   },
   "dependencies": {
