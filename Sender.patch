@@ -1,0 +1,13 @@
+--- node_modules/ws/lib/Sender-1.js	2016-06-24 14:20:12.000000000 +0200
++++ node_modules/ws/lib/Sender.js	2016-12-12 20:59:23.030669078 +0100
+@@ -267,7 +267,9 @@
+ 
+   handler(function() {
+     self.processing = false;
+-    self.flush();
++    process.nextTick(function() {
++      self.flush();
++    });
+   });
+ };
+ 

@@ -1,0 +1,46 @@
+<div id="jtg-cpp-menu-bar" class="disp-inl jtg-cpp-menu-bar">
+  
+  <div class="disp-no" data-jtg-cpp-code-templates></div>
+  <!-- run debug button -->
+  
+  <div class="disp-inl" jtg-cpp-run-btn></div>
+  
+  <!-- pause debug button -->
+  <a href="#" class="easyui-linkbutton easyui-tooltip marl10" onclick="event.preventDefault()"
+    title="Pause" data-options="iconCls:'icon-pause'" 
+    data-jtg-easyui-disabled="cpp.state.debug!='active'" 
+    data-ng-hide="cpp.state.mode=='slomo' ? !cpp.sloMo : cpp.state.exec!='running'"
+    data-ng-click="cpp.state.debug!='active' || cpp.pauseDebug()"></a>
+      
+  <!-- continue debug button -->
+  <a href="#" class="easyui-linkbutton easyui-tooltip marl10" onclick="event.preventDefault()"
+    title="Continue" data-options="iconCls:'icon-continue'" 
+    data-jtg-easyui-disabled="cpp.state.debug!='active'" 
+    data-ng-hide="cpp.state.mode=='slomo' ? cpp.sloMo : cpp.state.exec!='stopped'"
+    data-ng-click="cpp.state.debug!='active' || cpp.continueDebug()"></a>
+      
+  <!-- stop debug button -->
+  <a href="#" class="easyui-linkbutton easyui-tooltip marl10" onclick="event.preventDefault()"
+    title="Stop" data-options="iconCls:'icon-stop'" 
+    data-jtg-easyui-disabled="cpp.state.debug!='active' && cpp.state.run!='active' && cpp.state.valgrind!='active'" 
+    data-ng-click="(cpp.state.debug!='active' && cpp.state.run!='active' && cpp.state.valgrind!='active') || cpp.kill()"></a>
+  
+  <!-- step buttons -->
+  <div class="disp-inl" class="marl10">
+    <a href="#" class="easyui-linkbutton easyui-tooltip" onclick="event.preventDefault()"
+      title="Step over" data-options="iconCls:'icon-step-over'" 
+      data-jtg-easyui-disabled="cpp.state.debug!='active' || cpp.state.exec!='stopped'"
+      data-ng-click="cpp.state.debug!='active' || cpp.state.exec!='stopped' || cpp.stepOver()"></a>
+    <a href="#" class="easyui-linkbutton easyui-tooltip" onclick="event.preventDefault()"
+      title="Step into" data-options="iconCls:'icon-step-into'" 
+      data-jtg-easyui-disabled="cpp.state.debug!='active' || cpp.state.exec!='stopped'"
+      data-ng-click="cpp.state.debug!='active' || cpp.state.exec!='stopped' || cpp.stepInto()"></a>
+    <a href="#" class="easyui-linkbutton easyui-tooltip" onclick="event.preventDefault()"
+      title="Step out" data-options="iconCls:'icon-step-out'" 
+      data-jtg-easyui-disabled="cpp.state.debug!='active' || cpp.state.exec!='stopped'"
+      data-ng-click="cpp.state.debug!='active' || cpp.state.exec!='stopped' || cpp.stepOut()"></a>
+  </div>
+    
+  <!-- slow motion buttons -->
+  <div class="disp-inl jtg-cpp-slomo-slider marl10" data-jtg-cpp-slomo-slider></div>
+</div>

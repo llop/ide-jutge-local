@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html data-ng-app="ide.jutge">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Local IDE Jutge.org</title>
+    
+    <!-- other css -->
+    <link rel='stylesheet' href='/fonts/UbuntuMono.css'>
+    <link id='jtg-gui-themes' rel='stylesheet' href='/easy-ui/themes/default/easyui.css'>
+    <link rel="stylesheet" href="/easy-ui/themes/icon.css">
+    <link rel="stylesheet" href="/xterm.js/dist/xterm.css">
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <!-- jquery et al -->
+    
+    <script src="/xterm.js/dist/xterm.js"></script>
+    <script src="/xterm.js/dist/addons/fit/fit.js"></script>
+    
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <script src="/easy-ui/jquery.easyui.min.js"></script>
+    <script src="/easy-ui/datagrid-cellediting.js"></script>
+    <script src="/ace-builds/src-min/ace.js"></script>
+    
+    <!-- angular and sockets -->
+    <script src="/file-saver/FileSaver.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/angular/angular.js"></script>
+    <script src="/angular-socket-io/socket.js"></script>
+    
+    <!-- easyui angular -->
+    <script src="/easyui/core/easyui.module.js"></script>
+    <script src="/easyui/components/easyui-disable.directive.js"></script>
+    
+    <!-- workbench angular app -->
+    <script src="/workbench/core/workbench.module.js"></script>
+    <script src="/workbench/core/workbench.config.js"></script>
+    <script src="/workbench/core/workbench.provider.js"></script>
+    <script src="/workbench/core/workbench.controller.js"></script>
+    <script src="/workbench/components/workbench-terminal.directive.js"></script>
+    <script src="/workbench/components/workbench-problems.directive.js"></script>
+    <script src="/workbench/components/workbench-plugin-loader.directive.js"></script>
+    <script src="/workbench/components/workbench-menu-bar.directive.js"></script>
+    <script src="/workbench/components/workbench-file-menu.directive.js"></script>
+    <script src="/workbench/components/workbench-edit-menu.directive.js"></script>
+    <script src="/workbench/components/workbench-view-menu.directive.js"></script>
+    <script src="/workbench/components/workbench-help-menu.directive.js"></script>
+    <script src="/workbench/components/workbench-ace-editor.directive.js"></script>
+    <script src="/workbench/components/workbench-tabs.directive.js"></script>
+    <script src="/workbench/components/workbench-status-bar.directive.js"></script>
+
+    <!-- plugins go here -->
+    <script src="/plugins/cpp/core/cpp.module.js"></script>
+    <script src="/plugins/cpp/core/cpp.service.js"></script>
+    <script src="/plugins/cpp/core/cpp.config.js"></script>
+    <script src="/plugins/cpp/core/cpp.controller.js"></script>
+    <script src="/plugins/cpp/components/cpp-frames.directive.js"></script>
+    <script src="/plugins/cpp/components/cpp-variables.directive.js"></script>
+    <script src="/plugins/cpp/components/cpp-code-templates.directive.js"></script>
+    <script src="/plugins/cpp/components/cpp-expressions.directive.js"></script>
+    <script src="/plugins/cpp/components/cpp-slomo-slider.directive.js"></script>
+    <script src="/plugins/cpp/components/cpp-run-button.directive.js"></script>
+    <script src="/plugins/cpp/components/cpp-valgrind.directive.js"></script>
+
+    <!-- start the angular app -->
+    <script src="/app.module.js"></script>
+    
+  </head>
+  <body data-ng-controller="WorkbenchController as workbench">
+    
+    <div class="easyui-layout jtg-layout" data-options="fit:true">
+
+      <!-- north panel -->
+      <div class="jtg-layout-north" data-options="region:'north'">
+        <div id="jtg-menu-bar" data-jtg-menu-bar></div>
+      </div>
+      
+      <!-- editor panel -->
+      <div class="jtg-layout-center" data-options="region:'center'">
+        <div class="easyui-layout" data-options="fit:true">
+          <div data-options="region:'center',border:false">
+            <div id="jtg-editor" class="easyui-panel jtg-editor" 
+              data-options="fit:true,border:false"
+              data-jtg-ace-editor></div>
+          </div>
+          <div class="jtg-status-panel" data-options="region:'south',border:false">
+            <div class="easyui-panel jtg-status-bar"
+              data-options="fit:true,border:false" data-jtg-status-bar>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- plugin panel -->
+      <div class="jtg-layout-east" data-options="region:'east',split:true">
+        <div id="jtg-plugin-panel" class="jtg-plugin-panel"></div>
+      </div>
+      
+      <!-- south panel -->
+      <div class="jtg-layout-south" data-options="region:'south',split:true">
+        <div class="easyui-tabs jtg-tabs" 
+          data-options="fit:true,tabPosition:'top'" data-jtg-tabs>
+          <div class="jtg-term-panel" title="Terminal">
+            <div id="jtg-term" data-jtg-term></div>
+          </div>
+          <div title="Diagnostics">
+            <div id="jtg-problems" class="jtg-problems" data-jtg-problems></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+    
+    <!-- the plugins loader -->
+    <div class="disp-no" jtg-plugin-loader></div>
+  </body>
+</html>

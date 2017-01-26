@@ -1,0 +1,534 @@
+/******************************************************************************
+ 
+  element styles
+   
+******************************************************************************/
+
+html,
+body {
+  width:100%;
+  height:100%;
+  padding:0px;
+  margin:0px;
+  font-family:"Ubuntu Mono",Arial,sans-serif;
+}
+
+input {
+  font-family:"Ubuntu Mono",Arial,sans-serif;
+}
+
+
+
+/******************************************************************************
+ 
+  generic styles
+   
+******************************************************************************/
+
+.disp-no {
+  display:none;
+}
+.disp-inl {
+  display:inline-block;
+}
+.wid80 {
+  width:80px;
+}
+.wid150 {
+  width:150px;
+}
+
+.marl10 {
+  margin-left:10px;
+}
+
+.fon10 {
+  font-size:10px;
+}
+.fon12 {
+  font-size:12px;
+}
+.fon14 {
+  font-size:14px;
+}
+.fon16 {
+  font-size:16px;
+}
+.fon18 {
+  font-size:18px;
+}
+.fonb {
+  font-weight:bold;
+}
+
+
+/******************************************************************************
+ 
+  icon styles
+   
+******************************************************************************/
+
+.icon-jutge {
+  background:url("../img/jutge.svg") no-repeat center center;
+}
+.icon-about {
+  background:url("../img/about-icon.png") no-repeat center center;
+}
+.icon-dot {
+  background:url("../img/dot.png") no-repeat center center;
+}
+.icon-filenew {
+  background:url("../img/filenew.png") no-repeat center center;
+}
+.icon-fileopen {
+  background:url("../img/fileopen.png") no-repeat center center;
+}
+.icon-selectall {
+  background:url("../img/selectall.png") no-repeat center center;
+}
+.icon-import {
+  background:url("../img/import.png") no-repeat center center;
+}
+.icon-export {
+  background:url("../img/export.png") no-repeat center center;
+}
+.icon-cpp-templates {
+  background:url("../img/cpp-templates.png") no-repeat center center;
+}
+.icon-github {
+  background:url("../img/github-icon.png") no-repeat center center;
+}
+
+.icon-info {
+  background:url("../img/about-icon.png") no-repeat center left;
+}
+.icon-success {
+  background:url("../img/ok.png") no-repeat center left;
+}
+.icon-error {
+  background:url("../img/no.png") no-repeat center left;
+}
+
+
+.icon-cpp-plugin {
+  background:url("../img/cpp-icon.png") no-repeat center left;
+}
+.icon-valgrind {
+  background:url("../img/valgrind.png") no-repeat center center;
+}
+.icon-start {
+  background:url("../img/Start.gif") no-repeat center center;
+}
+.icon-debug {
+  background:url("../img/DebugProject.gif") no-repeat center center;
+}
+.icon-continue {
+  background:url("../img/Continue.png") no-repeat center center;
+}
+.icon-stop {
+  background:url("../img/Kill.png") no-repeat center center;
+}
+.icon-pause {
+  background:url("../img/Pause.png") no-repeat center center;
+}
+.icon-step-into {
+  background:url("../img/StepInto.png") no-repeat center center;
+}
+.icon-step-out {
+  background:url("../img/StepOut.png") no-repeat center center;
+}
+.icon-step-over {
+  background:url("../img/StepOver.png") no-repeat center center;
+}
+.icon-auto-pause {
+  background:url("../img/auto-pause.png") no-repeat center center;
+}
+.icon-auto-play {
+  background:url("../img/auto-play.png") no-repeat center center;
+}
+
+
+
+/******************************************************************************
+ 
+  layout styles
+   
+******************************************************************************/
+
+.jtg-layout {
+  width:100%;
+  height:100%;
+}
+
+.jtg-layout-north {
+  width:100%;
+  height:28px;
+}
+
+.jtg-layout-center {
+  width:50%;
+}
+
+.jtg-layout-east {
+  width:50%;
+}
+
+.jtg-layout-south {
+  width:100%;
+  height:35%;
+  border:none;
+}
+
+/******************************************************************************
+  calc() browser support is: IE9+, Chrome 19+, Safari 6+, 
+                             Firefox 16+ and with vendor prefix Firefox 4+
+******************************************************************************/
+.jtg-calc-example {
+  width:100%;
+  height:-moz-calc(100% - 26px);
+  height:-webkit-calc(100% - 26px);
+  height:calc(100% - 26px);
+}
+
+
+/******************************************************************************
+ 
+  file open dialog styles
+   
+******************************************************************************/
+
+.jtg-file-open-dialog {
+  width:400px;
+  padding:10px;
+}
+
+.jtg-file-open-form {
+  width:100%;
+  height:100%;
+}
+.jtg-file-open-form-file {
+  margin:10px 0px;
+}
+.jtg-file-open-form-file-input {
+  width:395px;
+}
+.jtg-file-open-form-btns {
+  text-align:right;
+  padding:15px 0px 5px 0;
+}
+
+
+/******************************************************************************
+ 
+  file save dialog styles
+   
+******************************************************************************/
+
+.jtg-file-save-dialog {
+  width:400px;
+  padding:10px;
+}
+
+.jtg-file-save-form {
+  width:100%;
+  height:100%;
+}
+.jtg-file-save-form-file {
+  margin:10px 0px;
+}
+.jtg-file-save-form-file-input {
+  width:390px;
+}
+.jtg-file-save-form-btns {
+  text-align:right;
+  padding:15px 0px 5px 0;
+}
+
+
+.jtg-menu-panel {
+  display:inline;
+  margin:0px 0px 0px 20px;
+  padding:0px 0px 0px 10px;
+  width:100%;
+  height:100%;
+}
+
+
+.jtg-github-panel {
+  display:inline;
+  height:100%;
+  float:right;
+}
+
+.jtg-github-img {
+  width:26px;
+  height:26px;
+  margin-bottom:-10px;
+}
+
+.jtg-github-user-text {
+  padding:0px 10px 0px 5px;
+}
+
+.jtg-open-gist-dialog {
+  width: 500px;
+  height: 500px;
+}
+
+.jtg-save-gist-dialog {
+  width: 500px;
+  height: 400px;
+}
+
+.jtg-save-gist-form-label {
+  display:inline-block; 
+  width:100px;
+}
+.jtg-save-gist-form-div {
+  padding: 5px 10px;
+}
+
+
+
+.jtg-plugin-panel {
+  width:100%;
+  height:100%;
+}
+
+/******************************************************************************
+ 
+  tabs styles
+   
+******************************************************************************/
+
+.jtg-tabs,
+.jtg-tabs .tabs-panels {
+  height:100%;
+}
+
+
+/******************************************************************************
+ 
+  status bar styles
+   
+******************************************************************************/
+
+.jtg-status-panel {
+  height:26px;
+}
+
+.jtg-status-bar {
+  width:100%;
+  height:100%;
+  display:table-cell;
+  vertical-align:middle;
+  overflow:hidden;
+}
+
+.jtg-status-msg {
+  padding:5px 0px 5px 20px;
+  margin-left:5px;
+}
+
+/******************************************************************************
+ 
+  editor styles
+   
+******************************************************************************/
+
+.jtg-editor {
+  width:100%;
+  height:100%;
+  border-bottom-width:1px;
+}
+
+
+/******************************************************************************
+ 
+  term styles  
+   
+******************************************************************************/
+
+.jtg-term-panel {
+  background-color: #000;
+}
+
+
+
+.jtg-problems {
+  width:100%;
+  height:100%;
+}
+
+
+.jtg-cpp-menu-bar {
+  padding:0px 0px 0px 25px;
+}
+
+.jtg-cpp-slomo-slider {
+  height:14px;
+  margin-left:10px;
+}
+
+.jtg-cpp-vars,
+.jtg-cpp-frames,
+.jtg-cpp-exprs,
+.jtg-cpp-valgrind {
+  width:100%;
+  height:100%;
+}
+
+
+.jtg-cpp-vars .datagrid-cell,
+.jtg-cpp-frames .datagrid-cell,
+.jtg-cpp-exprs .datagrid-cell,
+.jtg-cpp-valgrind .datagrid-cell {
+  white-space:normal;
+  word-wrap:normal;
+}
+
+.jtg-cpp-expr-val-icon {
+  display:inline-block;
+  width:16px;
+  height:16px;
+  margin-top:4px;
+}
+
+/******************************************************************************
+ 
+  problems styles  
+   
+******************************************************************************/
+
+.jtg-problems,
+.jtg-problems .datagrid,
+.jtg-problems .datagrid .datagrid-wrap {
+  width:100%;
+  height:100%;
+}
+
+.jtg-problems-datagrid {
+  width:100%;
+  height:100%;
+}
+
+
+/******************************************************************************
+ 
+  ace editor styles  
+   
+******************************************************************************/
+
+.jtg-editor-highlight {
+  background:rgba(255, 50, 50, 0.2);
+  position:absolute;
+  width:100% !important;
+  left:0 !important;
+}
+
+.jtg-editor-highlight-breakpoint {
+  background:rgba(255, 255, 50, 0.2);
+  position:absolute;
+  width:100% !important;
+  left:0 !important;
+}
+
+.jtg-editor-highlight-breakpoint-set {
+  background:rgba(0, 0, 255, 0.2);
+  position:absolute;
+  width:100% !important;
+  left:0 !important;
+}
+
+.ace_gutter-cell.ace_breakpoint { 
+  background-image:url("../img/jtg-breakpoint.png");
+  background-position:2px;
+  border-radius:0px 40px 40px 0px; 
+  box-shadow:0px 0px 1px 1px #00A inset; 
+}
+
+
+
+
+/******************************************************************************
+ 
+  doc page styles
+   
+******************************************************************************/
+
+.jtg-doc-title {
+  width:100%;
+  height:160px;
+  background-color:#34495E;
+}
+
+.jtg-doc-title-box {
+  width:800px;
+  margin:0 auto;
+  padding:0px;
+  line-height:160px;
+}
+
+.jtg-doc-title-span {
+  font-size:32px;
+  color:#FFF;
+}
+
+.jtg-doc-page {
+  width:800px;
+  padding:10px;
+  margin:0 auto;
+}
+
+.jtg-doc-h1 {
+  padding:10px 40px 0px 40px;
+  font-size:42px;
+  font-weight:bold;
+  color:#444;
+}
+
+.jtg-doc-h2 {
+  border-bottom:1px solid #356;
+  margin:10px 0px;
+  padding:10px 60px;
+  font-size:30px;
+  font-weight:bold;
+  color:#356;
+}
+
+.jtg-doc-par {
+  padding:5px 70px;
+  font-size:16px;
+  color:#444;
+}
+
+.jtg-doc-footer {
+  border-top:1px solid #356;
+  margin:40px 0px 10px 0px;
+  padding:10px 40px;
+  font-size:16px;
+  color:#444;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
