@@ -39,7 +39,9 @@ bower install
 
 ### Run it!
 You can use the `npm start &` command to get **ide.jutge** up and running
+
 Then, open `http://localhost:3000` in your browser to start coding! :smiley:
+  
 The app can be halted with `npm stop`
 
 ### Caveats
@@ -73,7 +75,7 @@ set print pretty on
 ```
 ## Author
 
-**Albert Lobo** - [llop](https://github.com/llop)
+**Albert Lobo Cusidó** - [llop](https://github.com/llop)
 
 ## License
 
