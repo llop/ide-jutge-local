@@ -1,6 +1,6 @@
 # ide-jutge-local
 
-**ide.jutge** is a Web IDE that supports the C++ language! :star:
+**ide.jutge** is a Web IDE that supports the C++ language! :clap::clap::clap:
 
 ![alt tag](/readme/ide-img2b.png)
 
