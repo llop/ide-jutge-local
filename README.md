@@ -1,6 +1,6 @@
 # ide-jutge-local
 
-**ide.jutge** is a Web IDE that supports the C++ language
+**ide.jutge** is a Web IDE that supports the C++ language! :star:
 
 ![alt tag](/readme/ide-img2b.png)
 
@@ -16,7 +16,7 @@
 - View and edit variables
 - Evaluate C++ expressions
 - Several GUI and editor themes
-- Other awesome features yet to be implemented
+- Other awesome features yet to be implemented! :facepunch:
 
 ## Getting started
 You will need the following software to run **ide.jutge**:
@@ -51,7 +51,7 @@ add-apt-repository -y ppa:ubuntu-toolchain-r/test
 apt-get -y update
 apt-get -y install gcc-6 g++-6
 ```
-- GDB should be compiled with python support
+- GDB should be compiled with python support (this will enable *pretty printing* variables)
 ```
 wget https://ftp.gnu.org/gnu/gdb/gdb-7.12.tar.gz
 tar -xvzf gdb-7.12.tar.gz
