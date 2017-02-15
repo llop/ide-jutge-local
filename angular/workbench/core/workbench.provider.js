@@ -50,7 +50,7 @@
     workbench.$inject = ['socketFactory'];
     
     function workbench(socketFactory) {
-
+      
       // service instance
       var me = {
         // socket
@@ -67,10 +67,24 @@
 
         ui: undefined,
 
-        saveFile: saveFile
+        saveFile: saveFile,
+        
+        about: about()
       }
 
-
+      
+      // about the app
+      function about() {
+        return {
+          name: 'ide.jutge',
+          version: '1.0 beta',
+          copyright: 'Copyright (c) 2016-2017 Albert Lobo',
+          documentationUrl: '/documentation',
+          faqUrl: '/faq'
+        };
+      }
+      
+      
       // plugin management
       function registerPlugin(pluginConfig) {
         if (me.firstPlugin == undefined) me.firstPlugin = pluginConfig.id;

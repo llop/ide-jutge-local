@@ -71,10 +71,11 @@ app.use(express.static(path.join(__dirname, 'angular')));
 
 // welcome page: this is a SPA!
 app.use('/', require('./routes/index'));
-app.use('/documentation', require('./routes/doc'));
 
 // however, we may have more stuff under the hood :)
 
+app.use('/documentation', require('./routes/doc/doc'));
+app.use('/faq', require('./routes/doc/faq'));
 
 
 // catch 404 and forward to error handler

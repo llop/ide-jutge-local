@@ -38,24 +38,8 @@
       '</div>';
     
     function link(scope, element, attrs) {
-      
       // have easyUI do its thang
       $.parser.parse(element);
-      
-      // top-level menus
-      //var fileMenu = $('#jtg-menu-file');
-      //var editMenu = $('#jtg-menu-edit');
-      //var viewMenu = $('#jtg-menu-view');
-      //var pluginsMenu = $('#jtg-menu-plugins');
-      //var helpMenu = $('#jtg-menu-help');
-      
-      //workbench.ui.menu = {
-      //  file: fileMenu,
-      //  edit: editMenu,
-      //  view: viewMenu,
-      //  plugins: pluginsMenu,
-      //  help: helpMenu
-      //}
     }
     
     

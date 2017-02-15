@@ -25,11 +25,11 @@
             '<input id="jtg-file-open-form-file-input" class="easyui-filebox jtg-file-open-form-file-input" ' +
               'data-options="label:\'File:\',required:true">' + 
           '</div>' +
-          '<div class="jtg-file-open-form-btns">' + 
-            '<a id="jtg-file-open-form-cancel-btn" href="#" class="easyui-linkbutton wid80">Cancel</a> ' + 
-            '<input id="jtg-file-open-form-submit-btn" type="submit" value="Open" class="l-btn l-btn-small l-btn-text wid80">' + 
-          '</div>' +
         '</form>' +
+        '<div class="dialog-button">' + 
+          '<a id="jtg-file-open-form-submit-btn" href="#" class="easyui-linkbutton wid80" data-options="iconCls:\'icon-ok\'">Open</a> ' + 
+          '<a id="jtg-file-open-form-cancel-btn" href="#" class="easyui-linkbutton wid80" data-options="iconCls:\'icon-cancel\'">Cancel</a> ' + 
+        '</div>' +
       '</div>' +
       // save file dialog
       '<div id="jtg-file-save-dialog" class="easyui-dialog jtg-file-save-dialog" title="Save to file" ' +
@@ -39,11 +39,11 @@
             '<input id="jtg-file-save-form-file-input" class="easyui-textbox jtg-file-save-form-file-input" ' +
               'data-options="label:\'File name:\',required:true">' + 
           '</div>' +
-          '<div class="jtg-file-save-form-btns">' + 
-            '<a id="jtg-file-save-form-cancel-btn" href="#" class="easyui-linkbutton wid80">Cancel</a> ' + 
-            '<input id="jtg-file-save-form-submit-btn" type="submit" value="Save" class="l-btn l-btn-small l-btn-text wid80">' + 
-          '</div>' +
         '</form>' +
+        '<div class="dialog-button">' + 
+          '<a id="jtg-file-save-form-submit-btn" href="#" class="easyui-linkbutton wid80" data-options="iconCls:\'icon-ok\'">Save</a> ' + 
+          '<a id="jtg-file-save-form-cancel-btn" href="#" class="easyui-linkbutton wid80" data-options="iconCls:\'icon-cancel\'">Cancel</a> ' + 
+        '</div>' +
       '</div>';
     
     function link(scope, element, attrs) {
@@ -60,15 +60,15 @@
       var fileOpenDialog = element.find('#jtg-file-open-dialog');
       var fileOpenForm = fileOpenDialog.find('#jtg-file-open-form');
       var fileOpenFormFileInput = fileOpenForm.find('#jtg-file-open-form-file-input');
-      var fileOpenFormCancelBtn = fileOpenForm.find('#jtg-file-open-form-cancel-btn');
-      var fileOpenFormSubmitBtn = fileOpenForm.find('#jtg-file-open-form-submit-btn');
+      var fileOpenFormCancelBtn = element.find('#jtg-file-open-form-cancel-btn');
+      var fileOpenFormSubmitBtn = element.find('#jtg-file-open-form-submit-btn');
       
       // file save dialog
       var fileSaveDialog = element.find('#jtg-file-save-dialog');
       var fileSaveForm = fileSaveDialog.find('#jtg-file-save-form');
       var fileSaveFormFileInput = fileSaveForm.find('#jtg-file-save-form-file-input');
-      var fileSaveFormCancelBtn = fileSaveForm.find('#jtg-file-save-form-cancel-btn');
-      var fileSaveFormSubmitBtn = fileSaveForm.find('#jtg-file-save-form-submit-btn');
+      var fileSaveFormCancelBtn = element.find('#jtg-file-save-form-cancel-btn');
+      var fileSaveFormSubmitBtn = element.find('#jtg-file-save-form-submit-btn');
       
       
       // have easyUI do its thang
@@ -78,6 +78,16 @@
       //-----------------------------------------------------------------------
       // file open dialog actions
       //-----------------------------------------------------------------------
+      
+      fileOpenDialog.dialog({ 
+        onOpen: onOpenDialogOpen, 
+        onClose: onOpenDialogClose
+      });
+      
+      function onOpenDialogOpen() {
+        document.addEventListener("keydown", closeOpenDialogHandler);
+        fileOpenFormFileInput.filebox('textbox').focus();
+      }
       
       // wait for user input to do validation
       fileOpenFormFileInput.filebox({ validateOnCreate: false });
@@ -93,6 +103,7 @@
       }
       
       function onClickFileOpenFormSubmitBtn(event) {
+        event.preventDefault();
         fileOpenForm.form('submit', {
 	        onSubmit: onSubmitFileOpenForm,
 	        success: onSuccessFileOpenForm
@@ -122,7 +133,6 @@
       function onLoadFileReader(event) {
         var text = event.target.result;
         workbench.ui.editor.setValue(text, -1);
-        workbench.ui.editor.focus();
         fileOpenDialog.dialog('close');
       }
       
@@ -132,10 +142,15 @@
       //-----------------------------------------------------------------------
       
       // focus input on open + wait for user input to do validation
-      fileSaveDialog.dialog({ onOpen: onSaveDialogOpen });
+      fileSaveDialog.dialog({ 
+        onOpen: onSaveDialogOpen,
+        onClose: onSaveDialogClose
+      });
       fileSaveFormFileInput.textbox({ validateOnCreate: false });
       
       function onSaveDialogOpen() {
+        // override Ctrl+S (save file)
+        document.addEventListener("keydown", closeSaveDialogHandler);
         fileSaveFormFileInput.textbox('textbox').focus();
       }
       
@@ -149,6 +164,7 @@
       }
       
       function onClickFileSaveFormSubmitBtn(event) {
+        event.preventDefault();
         fileSaveForm.form('submit', {
 	        onSubmit: onSubmitFileSaveForm,
 	        success: onSuccessFileSaveForm
@@ -187,23 +203,52 @@
       }
       
       function onFileOpenBtnClick(event) {
-        fileOpenDialog.dialog('open');
+        openFileOpenDialog();
       }
       
       function onFileSaveBtnClick(event) {
-        fileSaveDialog.dialog('open');
+        openFileSaveDialog();
       }
       
-      // override Ctrl+S (save file)
-      document.addEventListener("keydown", saveHandler, false);
       
-      function saveHandler(e) {
-        if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
-          e.preventDefault();
-          fileSaveDialog.dialog('open');
+      function closeOpenDialogHandler(event) {
+        if (event.keyCode == 27) {
+          fileOpenDialog.dialog('close');
         }
       }
-    
+      function closeSaveDialogHandler(event) {
+        if (event.keyCode == 27) {
+          fileSaveDialog.dialog('close');
+        }
+      }
+      
+      
+      scope.$on('jtg-open-file-dialog', openFileOpenDialog);
+      scope.$on('jtg-save-file-dialog', openFileSaveDialog);
+      
+      var isFileOpenDialogOpen = false;
+      var isFileSaveDialogOpen = false;
+      
+      function openFileOpenDialog() {
+        if (isFileSaveDialogOpen || isFileOpenDialogOpen) return;
+        isFileOpenDialogOpen = true;
+        fileOpenDialog.dialog('open');
+      }
+      function onOpenDialogClose() {
+        isFileOpenDialogOpen = false;
+        document.removeEventListener("keydown", closeOpenDialogHandler);
+        workbench.ui.editor.focus();
+      }
+      function openFileSaveDialog() {
+        if (isFileSaveDialogOpen || isFileOpenDialogOpen) return;
+        isFileSaveDialogOpen = true;
+        fileSaveDialog.dialog('open');
+      }
+      function onSaveDialogClose() {
+        isFileSaveDialogOpen = false;
+        document.removeEventListener("keydown", closeSaveDialogHandler);
+        workbench.ui.editor.focus();
+      }
     }
     
     return {

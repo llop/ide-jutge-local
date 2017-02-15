@@ -41,6 +41,9 @@ input {
 .marl10 {
   margin-left:10px;
 }
+.marl5 {
+  margin-left:5px;
+}
 
 .fon10 {
   font-size:10px;
@@ -60,6 +63,12 @@ input {
 .fonb {
   font-weight:bold;
 }
+.talc {
+  text-align:center;
+}
+.flor {
+  float:right;
+}
 
 
 /******************************************************************************
@@ -69,7 +78,7 @@ input {
 ******************************************************************************/
 
 .icon-jutge {
-  background:url("../img/jutge.svg") no-repeat center center;
+  background:url("../img/jutge.png") no-repeat center center;
 }
 .icon-about {
   background:url("../img/about-icon.png") no-repeat center center;
@@ -107,6 +116,9 @@ input {
 }
 .icon-error {
   background:url("../img/no.png") no-repeat center left;
+}
+.icon-clear-term {
+  background:url("../img/clear-term.png") no-repeat center center;
 }
 
 
@@ -276,8 +288,8 @@ input {
 }
 
 .jtg-save-gist-dialog {
-  width: 500px;
-  height: 400px;
+  width: 410px;
+  height: 175px;
 }
 
 .jtg-save-gist-form-label {
@@ -287,7 +299,44 @@ input {
 .jtg-save-gist-form-div {
   padding: 5px 10px;
 }
+.jtg-save-gist-public-text {
+  display:inline-block;
+  height:26px;
+  line-height:24px;
+}
 
+.f1 {
+  width:280px;
+}
+
+.jtg-gist-save-form {
+  padding:10px 0px;
+}
+
+.jtg-gist-save-form-btns {
+  text-align:center;
+}
+
+.jtg-help-help-dialog {
+  width:400px;
+}
+.jtg-help-about-dialog {
+  width:400px;
+}
+
+.jtg-help-text-box {
+  text-align:center;
+  padding:20px;
+}
+.jtg-about-img {
+  padding-top:20px;
+  width:100%;
+  height:128px;
+}
+.jtg-about-text-box {
+  text-align:center;
+  padding-bottom:20px;
+}
 
 
 .jtg-plugin-panel {
@@ -351,8 +400,14 @@ input {
 
 .jtg-term-panel {
   background-color: #000;
+  width:100%;
+  height:100%;
 }
 
+.jtg-term {
+  width:100%;
+  height:100%;
+}
 
 
 .jtg-problems {
@@ -458,7 +513,7 @@ input {
 
 .jtg-doc-title {
   width:100%;
-  height:160px;
+  height:100px;
   background-color:#34495E;
 }
 
@@ -466,7 +521,7 @@ input {
   width:800px;
   margin:0 auto;
   padding:0px;
-  line-height:160px;
+  line-height:100px;
 }
 
 .jtg-doc-title-span {
@@ -478,13 +533,14 @@ input {
   width:800px;
   padding:10px;
   margin:0 auto;
+  font-family:Arial;
 }
 
 .jtg-doc-h1 {
   padding:10px 40px 0px 40px;
   font-size:42px;
   font-weight:bold;
-  color:#444;
+  color:#356;
 }
 
 .jtg-doc-h2 {
@@ -496,10 +552,34 @@ input {
   color:#356;
 }
 
-.jtg-doc-par {
+
+.jtg-doc-h3 {
+  padding:5px 70px;
+  font-size:22px;
+  font-weight:bold;
+  color:#444;
+}
+
+.jtg-doc-sep {
+  height:0px;
+  border-bottom:1px solid #DDD;
+}
+
+.jtg-doc-text {
   padding:5px 70px;
   font-size:16px;
   color:#444;
+}
+
+.jtg-doc-toc {
+  padding:5px 70px;
+  font-size:22px;
+  font-weight:bold;
+  color:#444;
+}
+.jtg-doc-toc a {
+  color:#356;
+  text-decoration:none;
 }
 
 .jtg-doc-footer {
@@ -510,9 +590,29 @@ input {
   color:#444;
 }
 
+.jtg-doc-par {
+  padding:0px 0px 10px 0px;
+}
 
+.jtg-doc-par table {
+  width:100%;
+  border-spacing:0px;
+  border-collapse:collapse;
+}
+.jtg-doc-par th, 
+.jtg-doc-par td {
+  margin:0px;
+  padding:5px 10px;
+  border:1px solid #DDD;
+}
 
+.jtg-doc-par img {
+  vertical-align:middle;
+}
 
+.jtg-doc-img {
+  width:660px;
+}
 
 
 

@@ -238,6 +238,7 @@
 
     function onCompileOk(programName) {
       // flash result
+      workbench.ui.status.jtg.notifySuccess('Compilation successful!', 'Starting debug');
       workbench.ui.tabs.tabs('select', 'Terminal');
     }
     
@@ -274,8 +275,6 @@
       workbench.ui.terminal.focus();
       
       me.state.debug = 'active';
-      workbench.ui.status.jtg.notifySuccess('Compilation successful!', 'Starting debug');
-      
 
       // add breakpoint listeners
       me.deregBreakpointInsert = $scope.$on('jtg-breakpoint-insert', onBreakpointInsert);

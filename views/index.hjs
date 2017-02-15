@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>Local IDE Jutge.org</title>
+    <title>IDE Jutge.org</title>
     
     <!-- other css -->
     <link rel='stylesheet' href='/fonts/UbuntuMono.css'>
@@ -46,6 +46,7 @@
     <script src="/workbench/components/workbench-file-menu.directive.js"></script>
     <script src="/workbench/components/workbench-edit-menu.directive.js"></script>
     <script src="/workbench/components/workbench-view-menu.directive.js"></script>
+    <!--script src="/workbench/components/workbench-plugin-menu.directive.js"></script-->
     <script src="/workbench/components/workbench-help-menu.directive.js"></script>
     <script src="/workbench/components/workbench-ace-editor.directive.js"></script>
     <script src="/workbench/components/workbench-tabs.directive.js"></script>
@@ -66,6 +67,8 @@
 
     <!-- start the angular app -->
     <script src="/app.module.js"></script>
+    
+    <!-- script src="/js/ide.jutge.js"></script -->
     
   </head>
   <body data-ng-controller="WorkbenchController as workbench">
@@ -102,8 +105,8 @@
       <div class="jtg-layout-south" data-options="region:'south',split:true">
         <div class="easyui-tabs jtg-tabs" 
           data-options="fit:true,tabPosition:'top'" data-jtg-tabs>
-          <div class="jtg-term-panel" title="Terminal">
-            <div id="jtg-term" data-jtg-term></div>
+          <div title="Terminal">
+            <div id="jtg-term" class="jtg-term" data-jtg-term></div>
           </div>
           <div title="Diagnostics">
             <div id="jtg-problems" class="jtg-problems" data-jtg-problems></div>

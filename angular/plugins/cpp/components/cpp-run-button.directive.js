@@ -8,10 +8,12 @@
   function cppRunBtn() {
     
     var template = 
-      '<a id="jtg-cpp-main-run-btn" href="#" class="easyui-splitbutton" ' + 
+      '<a id="jtg-cpp-main-run-btn" href="#" class="easyui-splitbutton marl5" ' + 
         'data-options="menu:\'#jtg-cpp-exec-menu\',iconCls:\'icon-start\',disabled:true" ' + 
-          'data-jtg-easyui-disabled="!workbench.boxReady || cpp.state.debug!=\'idle\' || cpp.state.run!=\'idle\' || cpp.state.valgrind!=\'idle\'"' + 
-        'style="margin-left:5px;">Run</a>' + 
+          'data-jtg-easyui-disabled="' +
+'!workbench.boxReady || ' +
+'cpp.state.debug!=\'idle\' || cpp.state.run!=\'idle\' || cpp.state.valgrind!=\'idle\'"' + 
+        '>Run</a>' + 
       '<div id="jtg-cpp-exec-menu" class="easyui-menu wid150">' + 
         '<div id="jtg-cpp-run-btn" data-options="iconCls:\'icon-start\'">Run</div>' + 
         '<div id="jtg-cpp-debug-btn" data-options="iconCls:\'icon-debug\'">Debug</div>' + 

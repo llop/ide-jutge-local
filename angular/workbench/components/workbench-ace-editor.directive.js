@@ -39,6 +39,24 @@
       });
       //session.on("change", onEditorChange);
       
+      
+      // register commands
+      editor.commands.addCommand({
+        name: "Open",
+        exec: function() {
+          scope.$broadcast('jtg-open-file-dialog');
+        },
+        bindKey: {mac: "cmd-o", win: "ctrl-o"}
+      });
+      editor.commands.addCommand({
+        name: "Save",
+        exec: function () {
+          scope.$broadcast('jtg-save-file-dialog');
+        },
+        bindKey: {mac: "cmd-s", win: "ctrl-s"}
+      });
+      
+      
       doLocalStorage();
       
       element.panel({ onResize: onResizePanel });

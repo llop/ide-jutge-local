@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>IDE Jutge.org - FAQ</title>
+    
+    <!-- css, javascript -->
+    <link rel='stylesheet' href='/fonts/UbuntuMono.css'>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/jquery/dist/jquery.min.js"></script>
+    
+  </head>
+  <body>
+    <div class="jtg-doc-title">
+      <div class="jtg-doc-title-box">
+      <span class="jtg-doc-title-span">
+        ide.jutge - FAQ
+      </span>
+      </div>
+    </div>
+    <div class="jtg-doc-page">
+      
+      <!--
+        What is ide.jutge?
+      -->
+      
+      <div class="jtg-doc-toc">
+        <div class="jtg-doc-par">
+          <ul>
+            <li><a href="#what-is-ide-jutge">What is <b>ide.jutge</b>?</a></li>
+            <li><a href="#how-do-i-execute-my-programs">How do I execute my programs?</a></li>
+            <li><a href="#when-is-my-program-compiled">When is my program compiled?</a></li>
+            <li><a href="#why-is-debugging-so-awesome">Why is debugging so awesome?</a></li>
+            <li><a href="#how-do-i-add-remove-breakpoints">How do I add/remove breakpoints?</a></li>
+            <li><a href="#can-i-modify-variables-of-any-type">Can I modify variables of any type?</a></li>
+            <li><a href="#so-how-do-i-add-remove-expressions">So, how do I add/remove expressions?</a></li>
+            <li><a href="#can-i-keep-my-ide-configuration-for-a-later-session">Can I keep my IDE configuration for a later session?</a></li>
+            <li><a href="#my-program-is-taking-too-long">My program is taking too long!</a></li>
+            <li><a href="#i-have-another-question">I have another question!</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="jtg-doc-h2" id="what-is-ide-jutge">
+        <span>What is <b>ide.jutge</b>?</span>
+      </div>
+      <div class="jtg-doc-text">
+        <div class="jtg-doc-par">
+          <p><b>ide.jutge</b> is <i>Jutge.org</i>'s Web application to edit, compile, run and debug C++ programs.</p>
+        </div>
+      </div>
+      
+      <div class="jtg-doc-h2" id="how-do-i-execute-my-programs">
+        <span>How do I execute my programs?</span>
+      </div>
+      <div class="jtg-doc-text">
+        <div class="jtg-doc-par">
+          <p>Choose the execution mode from the <a href="/documentation#exec-selector">Execution Selector</a>.</p>
+          <img src="/img/doc/exec-menu.png" alt="Execution Selector">
+          <p>There are essentially two execution categories:</p>
+          <ul>
+            <li><b>Non-debug:</b> <i>Run</i> and <i>Valgrind</i>.</li>
+            <li><b>Debug:</b> <i>Debug</i> and <i>Slow motion</i>.</li>
+          </ul>
+          <p><i>Run</i> and <i>Valgrind</i> just execute the program, but the latter will
+          report any memory-related errors found in the
+          <a href="/documentation#valgrind-tab">Valgrind Tab</a>.</p>
+          <p><i>Debug</i> and <i>Slow motion</i> let you take advantage of the IDE's debugging features.</p>
+        </div>
+      </div>
+      
+      
+      <div class="jtg-doc-h2" id="when-is-my-program-compiled">
+        <span>When is my program compiled?</span>
+      </div>
+      <div class="jtg-doc-text">
+        <div class="jtg-doc-par">
+          <p>Your program gets compiled every time you choose one of the execution modes 
+          from the <a href="/documentation#exec-selector">Execution Selector</a>.</p>
+          <p>Compilation errors will be reported in the 
+          <a href="/documentation#diagnostics-tab">Diagnostics Tab</a>, and marked with the 
+          <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABOFBMVEX/////////QRswFAb/Ui4wFAYwFAYwFAaWGAfDRymzOSH/PxswFAb/SiUwFAYwFAbUPRvjQiDllog5HhHdRybsTi3/Tyv9Tir+Syj/UC3////XurebMBIwFAb/RSHbPx/gUzfdwL3kzMivKBAwFAbbvbnhPx66NhowFAYwFAaZJg8wFAaxKBDZurf/RB6mMxb/SCMwFAYwFAbxQB3+RB4wFAb/Qhy4Oh+4QifbNRcwFAYwFAYwFAb/QRzdNhgwFAYwFAbav7v/Uy7oaE68MBK5LxLewr/r2NXewLswFAaxJw4wFAbkPRy2PyYwFAaxKhLm1tMwFAazPiQwFAaUGAb/QBrfOx3bvrv/VC/maE4wFAbRPBq6MRO8Qynew8Dp2tjfwb0wFAbx6eju5+by6uns4uH9/f36+vr/GkHjAAAAYnRSTlMAGt+64rnWu/bo8eAA4InH3+DwoN7j4eLi4xP99Nfg4+b+/u9B/eDs1MD1mO7+4PHg2MXa347g7vDizMLN4eG+Pv7i5evs/v79yu7S3/DV7/498Yv24eH+4ufQ3Ozu/v7+y13sRqwAAADLSURBVHjaZc/XDsFgGIBhtDrshlitmk2IrbHFqL2pvXf/+78DPokj7+Fz9qpU/9UXJIlhmPaTaQ6QPaz0mm+5gwkgovcV6GZzd5JtCQwgsxoHOvJO15kleRLAnMgHFIESUEPmawB9ngmelTtipwwfASilxOLyiV5UVUyVAfbG0cCPHig+GBkzAENHS0AstVF6bacZIOzgLmxsHbt2OecNgJC83JERmePUYq8ARGkJx6XtFsdddBQgZE2nPR6CICZhawjA4Fb/chv+399kfR+MMMDGOQAAAABJRU5ErkJggg==' alt="Error Icon">
+          and 
+          <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAmVBMVEX///8AAAD///8AAAAAAABPSzb/5sAAAAB/blH/73z/ulkAAAAAAAD85pkAAAAAAAACAgP/vGz/rkDerGbGrV7/pkQICAf////e0IsAAAD/oED/qTvhrnUAAAD/yHD/njcAAADuv2r/nz//oTj/p064oGf/zHAAAAA9Nir/tFIAAAD/tlTiuWf/tkIAAACynXEAAAAAAAAtIRW7zBpBAAAAM3RSTlMAABR1m7RXO8Ln31Z36zT+neXe5OzooRDfn+TZ4p3h2hTf4t3k3ucyrN1K5+Xaks52Sfs9CXgrAAAAjklEQVR42o3PbQ+CIBQFYEwboPhSYgoYunIqqLn6/z8uYdH8Vmdnu9vz4WwXgN/xTPRD2+sgOcZjsge/whXZgUaYYvT8QnuJaUrjrHUQreGczuEafQCO/SJTufTbroWsPgsllVhq3wJEk2jUSzX3CUEDJC84707djRc5MTAQxoLgupWRwW6UB5fS++NV8AbOZgnsC7BpEAAAAABJRU5ErkJggg==' alt="Warning Icon">
+          icons in the 
+          <a href="/documentation#code-editor">Code Editor</a>'s gutter.</p>
+        </div>
+      </div>
+      
+      
+      <div class="jtg-doc-h2" id="why-is-debugging-so-awesome">
+        <span>Why is debugging so awesome?</span>
+      </div>
+      <div class="jtg-doc-text">
+        <div class="jtg-doc-par">
+          <p>Debugging lets you inspect what your code does in real-time! 
+          By setting <i>breakpoints</i> (<img src="/img/jtg-breakpoint.png" alt="Breakpoint Icon">), 
+          you can pause your program at any given point.
+          </p>
+          <p>
+          While the program is paused you can:
+          <ul>
+            <li>See and modify the values of the variables in the <a href="/documentation#variables-tab">Variables Tab</a>.</li>
+            <li>See the program's <i>call stack</i> in the <a href="/documentation#frames-tab">Frames Tab</a>.</li>
+            <li>Evaluate C++ expressions in the <a href="/documentation#exprs-tab">Expressions Tab</a>.</li>
+          </ul>
+          </p>
+          <p>
+          You can also control the execution of the program using 
+          the <a href="/documentation#debug-controls">Debug Controls</a>.
+          When in <i>Debug</i> mode, the program will pause at the beginning on the <b>main</b> method.
+          </p>
+          <p>
+          You can then resume execution with the <i>Continue</i> button 
+          (<img src="/img/Continue.png" alt="Continue Button">) —the program will go on until it finishes 
+          or another <i>breakpoint</i> is hit.
+          </p>
+          <p>
+          Alternatively, you can execute the program line-by-line using the <i>Step</i> buttons 
+          (<img src="/img/StepOver.png" alt="Step Over Button">, 
+          <img src="/img/StepInto.png" alt="Step Into Button"> and 
+          <img src="/img/StepOut.png" alt="Step Out Button">).
+          </p>
+        </div>
+      </div>
+      
+      <div class="jtg-doc-h2" id="how-do-i-add-remove-breakpoints">
+        <span>How do I add/remove <i>breakpoints</i>?</span>
+      </div>
+      <div class="jtg-doc-text">
+        <div class="jtg-doc-par">
+          <p>Click on the left side of the editor's gutter to add a breakpoint.
+          The <img src="/img/jtg-breakpoint.png" alt="Breakpoint Icon"> icon indicates 
+          the breakpoint has been set. Click again to remove the breakpoint.</p>
+          <img src="/img/doc/breakpoint-add.png" alt="Add/Remove Breakpoint">
+        </div>
+      </div>
+      
+      
+      <div class="jtg-doc-h2" id="can-i-modify-variables-of-any-type">
+        <span>Can I modify variables of any type?</span>
+      </div>
+      <div class="jtg-doc-text">
+        <div class="jtg-doc-par">
+          <p><b>Yes</b>, you can modify variables of any type, <b>but</b> there are some caveats:</p>
+          <ul>
+            <li>Using the <a href="/documentation#variables-tab">Variables Tab</a>, 
+            you can only modify <i>basic-type</i> variables. The complete list of supported types 
+            can be found <a href="/documentation#modifiable-variable-types">here</a>.</li>
+            <li>The <a href="/documentation#exprs-tab">Expressions Tab</a> may be used 
+            to set variable values. However, special care must be taken in this case, 
+            because <b>all expressions are reevaluated every time the program pauses</b>. 
+            So, you will probably need to <b>remove the expression</b> right after evaluating it.</li>
+          </ul>
+        </div>
+      </div>
+      
+      
+      <div class="jtg-doc-h2" id="so-how-do-i-add-remove-expressions">
+        <span>So, how do I add/remove expressions?</span>
+      </div>
+      <div class="jtg-doc-text">
+        <div class="jtg-doc-par">
+          <p>Click on the <i>Add</i> button to add an expression.</p>
+          <p>Use the checkboxes to select the expressions you want to remove,
+          and hit the <i>Remove</i> button.</p>
+          <img src="/img/doc/expr-remove.png" alt="Remove Expression">
+        </div>
+      </div>
+            
+            
+      <div class="jtg-doc-h2" id="can-i-keep-my-ide-configuration-for-a-later-session">
+        <span>Can I keep my IDE configuration for a later session?</span>
+      </div>
+      <div class="jtg-doc-text">
+        <div class="jtg-doc-par">
+          <p>The following data is saved in your browser's <b>Local Storage</b>:</p>
+          <ul>
+            <li>C++ code in the editor.</li>
+            <li><i>View</i> configuration (<i>Font size</i>, <i>IDE</i>
+            and <i>Editor themes</i>).</li>
+          </ul>
+          <p>This means that you will keep everything if you browse to another page,
+          close the IDE tab, or even close your browser!</p>
+        </div>
+      </div>
+      
+      
+      <div class="jtg-doc-h2" id="my-program-is-taking-too-long">
+        <span>My program is taking too long!</span>
+      </div>
+      <div class="jtg-doc-text">
+        <div class="jtg-doc-par">
+          <p>Are you sure it is not waiting for input (ie. <b>cin</b>, <b>scanf</b>)?</p>
+          <p>If your program is taking longer than expected to finish, hit the <i>Pause</i> 
+          button (<img src="/img/Pause.png" alt="Pause Button">) to see where execution is at.
+          The current line will be highlighted in the code editor!</p>
+          <p>If you find you program has gone into an infinite loop, just kill it with the 
+          <i>Stop</i> button (<img src="/img/Kill.png" alt="Stop Button">).</p>
+        </div>
+      </div>
+      
+      
+      <script>
+      $(writeContactMail);
+      function writeContactMail() {
+        var str2 = 'yah';
+        var str1 = 'al' + 'bert';
+        var str = '@';
+        str1 += 'lobo1981';
+        str2 += 'oo.c';
+        $('#jtg-ide-contact').text(str1 + str + str2 + 'om');
+      }
+      </script>
+      <div class="jtg-doc-h2" id="i-have-another-question">
+        <span>I have another question!</span>
+      </div>
+      <div class="jtg-doc-text">
+        <div class="jtg-doc-par">
+          <p>Have you not found an answer to your question in this FAQ, or the 
+          <a href="/documentation">IDE Documentation page</a>?</p>
+          <p>Feel free to write to <span id="jtg-ide-contact"></span>!</p>
+        </div>
+      </div>
+      
+      <%> footer %>
+    </div>
+  </body>
+</html>

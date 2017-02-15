@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>IDE Jutge.org - Components Overview</title>
+    
+    <!-- css, javascript -->
+    <link rel='stylesheet' href='/fonts/UbuntuMono.css'>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/jquery/dist/jquery.min.js"></script>
+    
+  </head>
+  <body>
+    <div class="jtg-doc-title">
+      <div class="jtg-doc-title-box">
+      <span class="jtg-doc-title-span">
+        ide.jutge - IDE Components Overview
+      </span>
+      </div>
+    </div>
+    <div class="jtg-doc-page">
+      
+      <div class="jtg-doc-text">
+        <div class="jtg-doc-par">
+          <img src="/img/doc/ide-components.png" alt="IDE Components" class="jtg-doc-img">
+        </div>
+      </div>
+      
+      <div class="jtg-doc-toc">
+        <div class="jtg-doc-par">
+          <ul>
+            <li>1 - <a href="#menu-bar">Menu Bar</a></li>
+            <li>2 - <a href="#c++-toolbar">C++ Toolbar</a></li>
+            <li>3 - <a href="#code-editor">Code Editor</a></li>
+            <li>4 - <a href="#status-bar">Status Bar</a></li>
+            <li>5 - <a href="#c++-panel">C++ Panel</a></li>
+            <li>6 - <a href="#terminal-diagnostics">Terminal/Diagnostics</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="jtg-doc-h2" id="menu-bar">
+        <span>1 - Menu Bar</span>
+      </div>
+      
+      <div class="jtg-doc-h3" id="file-menu">
+        <span class="fonb">File Menu</span>
+        <img src="/img/doc/file-menu.png" alt="File Menu" class="flor">
+        <div class="jtg-doc-sep"></div>
+      </div>
+      <div class="jtg-doc-text">
+        <div class="jtg-doc-par">
+          <p><span class="fonb">New</span>: Clears the code editor.</p>
+          <p><span class="fonb">Open</span>: Open a file in the editor.</p>
+          <p><span class="fonb">Save</span>: Save the code to a file in the <i>Downloads</i> folder.</p>
+          <p><span class="fonb">Import</span>: No function yet.</p>
+          <p><span class="fonb">Export</span>: No function yet.</p>
+          <p><span class="fonb">C++ templates</span>: Open a C++ program template in the editor.</p>
+          <p>The provided C++ program templates are:</p>
+          <ul>
+            <li>Hello world!: <i>The "Hello world" program in C++.</i></li>
+            <li>Fill in a vector: <i>About C ++ STL (Standard Template Library) vector, and standard input/output.</i></li>
+            <li>Iterative GCD: <i>Calculates the greatest common denominator of two numbers, iteratively.</i></li>
+            <li>Correct parenthesization?: <i>Answers the question using an STL stack.</i></li>
+            <li>Fibonacci in a vector: <i>Calculate Fibonacci numbers using an iterative technique.</i></li>
+            <li>Recursive factorial: <i>Calculate the factorial of a number using a recursive technique.</i></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="jtg-doc-h3" id="edit-menu">
+        <span class="fonb">Edit Menu</span>
+        <img src="/img/doc/edit-menu.png" alt="Edit Menu" class="flor">
+        <div class="jtg-doc-sep"></div>
+      </div>
+      <div class="jtg-doc-text">
+        <div class="jtg-doc-par">
+          <p><span class="fonb">Undo</span>: Undoes the last change in the editor.</p>
+          <p><span class="fonb">Redo</span>: Redoes the last undone change.</p>
+          <p><span class="fonb">Select all</span>: Selects all the code in the editor.</p>
+          <br>
+          <p>
+          The traditional <i>Cut</i>, <i>Copy</i> and <i>Paste</i> commands are not available as Edit menu options,
+          but can be triggered using the standard key shortcuts.
+          </p>
+          <p>
+          <i>Accessing the system clipboard via JavaScript is considered an
+unsafe operation: scripts could erase and replace the contents of the clipboard
+(data loss issue), and also read the contents of the clipboard (security and
+privacy issue).</i>
+          </p>
+        </div>
+      </div>
+      
+      <div class="jtg-doc-h3" id="view-menu">
+        <span class="fonb">View Menu</span>
+        <img src="/img/doc/view-menu.png" alt="View Menu" class="flor">
+        <div class="jtg-doc-sep"></div>
+      </div>
+      <div class="jtg-doc-text">
+        <div class="jtg-doc-par">
+          <p><span class="fonb">Font size</span>: Set the code editor's font size.</p>
+          <ul>
+            <li>Smaller: 10px</li>
+            <li>Small: 12px</li>
+            <li>Normal: 14px</li>
+            <li>Large: 16px</li>
+            <li>Larger: 18px</li>
+          </ul>
+          <p><span class="fonb">IDE themes</span>: Change <b>ide.jutge</b>'s theme.</p>
+          <p>jQuery EasyUI provides different themes:</p>
+          <ul>
+            <li>Default themes:<br><i>Default, Bootstrap, Metro, Gray, Black, Material.</i></li>
+            <li>UI themes:<br><i>Cupertino, Pepper grinder, Dark hive.</i></li>
+            <li>Metro themes:<br><i>Blue, Gray, Green, Orange, Red.</i></li>
+          </ul>
+          <p><span class="fonb">Editor themes</span>: Change the editor's theme.</p>
+          <p>Ace editor provides different themes:</p>
+          <ul>
+            <li>Light themes:<br><i>Chrome, Clouds, Crimson editor, Dawn, Dreamweaver, Eclipse, GitHub,
+            IPlastic, KatzenMilch, Kuroir, Solarized light, SQL server, Textmate, Tomorrow, XCode.</i></li>
+            <li>Dark themes:<br><i>Ambiance, Chaos, Clouds midnight, Cobalt, Idle fingers, Kr theme,
+            Merbivore, Merbivore soft, Mono industrial, Monokai, Pastel on dark, Solarized dark, 
+            Terminal, Tomorrow night, Tomorrow night blue, Tomorrow night bright, Tomorrow night 80s,
+            Twilight, Vibrant ink.</i></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="jtg-doc-h3" id="help-menu">
+        <span class="fonb">Help Menu</span>
+        <img src="/img/doc/help-menu.png" alt="Help Menu" class="flor">
+        <div class="jtg-doc-sep"></div>
+      </div>
+      <div class="jtg-doc-text">
+        <div class="jtg-doc-par">
+          <p><span class="fonb">Help</span>: Links to the IDE's documentation.</p>
+          <p><span class="fonb">About</span>: General information about <b>ide.jutge</b>.</p>
+        </div>
+      </div>
+      
+      
+      <div class="jtg-doc-h2" id="c++-toolbar">
+        <span>2 - C++ Toolbar</span>
+      </div>
+      
+      <div class="jtg-doc-h3" id="exec-selector">
+        <span class="fonb">Execution Selector</span>
+        <img src="/img/doc/exec-menu.png" alt="Execution Selector" class="flor">
+        <div class="jtg-doc-sep"></div>
+      </div>
+      <div class="jtg-doc-text">
+        <div class="jtg-doc-par">
+          <p><span class="fonb">Run</span>: Execute the program.</p>
+          <p><span class="fonb">Debug</span>: Debug the program.</p>
+          <p><span class="fonb">Slow motion</span>: Debug the program one line at a time.</p>
+          <p><span class="fonb">Valgrind</span>: Run the program through <i>Valgrind</i> to find memory-related errors.</p>
+        </div>
+      </div>
+      
+      <div class="jtg-doc-h3" id="debug-controls">
+        <span class="fonb">Debug Controls</span>
+        <div class="jtg-doc-sep"></div>
+      </div>
+      <div class="jtg-doc-text">
+        <div class="jtg-doc-par">
+          <table>
+            <tr>
+              <th>Button</th>
+              <th>Command</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td class="talc"><img src="/img/Continue.png" alt="Continue Button"> / <img src="/img/Pause.png" alt="Pause Button"></td>
+              <td class="talc"><b>Continue/Pause</b></td>
+              <td>Continue or pause the program's execution.</td>
+            </tr>
+            <tr>
+              <td class="talc"><img src="/img/Kill.png" alt="Stop Button"></td>
+              <td class="talc"><b>Stop</b></td>
+              <td>Kill the executing program.<br><i>Available in all execution modes.</i></td>
+            </tr>
+            <tr>
+              <td class="talc"><img src="/img/StepOver.png" alt="Step Over Button"></td>
+              <td class="talc"><b>Step Over</b></td>
+              <td>Advance the program’s execution to the next line of code, ignoring function calls.</td>
+            </tr>
+            <tr>
+              <td class="talc"><img src="/img/StepInto.png" alt="Step Into Button"></td>
+              <td class="talc"><b>Step Into</b></td>
+              <td>Advance the program’s execution to the next line if it is not a function call.<br>
+              If it is, stop at the first instruction of the called function.</td>
+            </tr>
+            <tr>
+              <td class="talc"><img src="/img/StepOut.png" alt="Step Out Button"></td>
+              <td class="talc"><b>Step Out</b></td>
+              <td>Resume the execution of the program until the current function is exited.</td>
+            </tr>
+            <tr>
+              <td class="talc"><img src="/img/doc/interval-scroller.png" alt="Interval Scroller"></td>
+              <td class="talc"><b>Slow Motion Interval</b></td>
+              <td>Set the interval for the <i>Slow motion</i> execution mode (1 to 10 seconds).</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      
+      
+      <div class="jtg-doc-h2" id="code-editor">
+        <span>3 - Code Editor</span>
+      </div>
+      <div class="jtg-doc-text">
+        <div class="jtg-doc-par">
+          <p>Fully featured code editor with C++ syntax highlighting.</p>
+          <p>
+          Click on the left side of the gutter to insert/remove breakpoints
+          (<img src="/img/jtg-breakpoint.png" alt="Breakpoint Icon">).
+          </p>
+          <p>
+          The 
+          <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABOFBMVEX/////////QRswFAb/Ui4wFAYwFAYwFAaWGAfDRymzOSH/PxswFAb/SiUwFAYwFAbUPRvjQiDllog5HhHdRybsTi3/Tyv9Tir+Syj/UC3////XurebMBIwFAb/RSHbPx/gUzfdwL3kzMivKBAwFAbbvbnhPx66NhowFAYwFAaZJg8wFAaxKBDZurf/RB6mMxb/SCMwFAYwFAbxQB3+RB4wFAb/Qhy4Oh+4QifbNRcwFAYwFAYwFAb/QRzdNhgwFAYwFAbav7v/Uy7oaE68MBK5LxLewr/r2NXewLswFAaxJw4wFAbkPRy2PyYwFAaxKhLm1tMwFAazPiQwFAaUGAb/QBrfOx3bvrv/VC/maE4wFAbRPBq6MRO8Qynew8Dp2tjfwb0wFAbx6eju5+by6uns4uH9/f36+vr/GkHjAAAAYnRSTlMAGt+64rnWu/bo8eAA4InH3+DwoN7j4eLi4xP99Nfg4+b+/u9B/eDs1MD1mO7+4PHg2MXa347g7vDizMLN4eG+Pv7i5evs/v79yu7S3/DV7/498Yv24eH+4ufQ3Ozu/v7+y13sRqwAAADLSURBVHjaZc/XDsFgGIBhtDrshlitmk2IrbHFqL2pvXf/+78DPokj7+Fz9qpU/9UXJIlhmPaTaQ6QPaz0mm+5gwkgovcV6GZzd5JtCQwgsxoHOvJO15kleRLAnMgHFIESUEPmawB9ngmelTtipwwfASilxOLyiV5UVUyVAfbG0cCPHig+GBkzAENHS0AstVF6bacZIOzgLmxsHbt2OecNgJC83JERmePUYq8ARGkJx6XtFsdddBQgZE2nPR6CICZhawjA4Fb/chv+399kfR+MMMDGOQAAAABJRU5ErkJggg==' alt="Error Icon">
+          icon marks compilation errors, and the
+          <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAmVBMVEX///8AAAD///8AAAAAAABPSzb/5sAAAAB/blH/73z/ulkAAAAAAAD85pkAAAAAAAACAgP/vGz/rkDerGbGrV7/pkQICAf////e0IsAAAD/oED/qTvhrnUAAAD/yHD/njcAAADuv2r/nz//oTj/p064oGf/zHAAAAA9Nir/tFIAAAD/tlTiuWf/tkIAAACynXEAAAAAAAAtIRW7zBpBAAAAM3RSTlMAABR1m7RXO8Ln31Z36zT+neXe5OzooRDfn+TZ4p3h2hTf4t3k3ucyrN1K5+Xaks52Sfs9CXgrAAAAjklEQVR42o3PbQ+CIBQFYEwboPhSYgoYunIqqLn6/z8uYdH8Vmdnu9vz4WwXgN/xTPRD2+sgOcZjsge/whXZgUaYYvT8QnuJaUrjrHUQreGczuEafQCO/SJTufTbroWsPgsllVhq3wJEk2jUSzX3CUEDJC84707djRc5MTAQxoLgupWRwW6UB5fS++NV8AbOZgnsC7BpEAAAAABJRU5ErkJggg==' alt="Warning Icon">
+          icon marks warnings.
+          </p>
+          <img src="/img/doc/editor-panel.png" alt="Code Editor">
+        </div>
+      </div>
+      
+      
+      <div class="jtg-doc-h2" id="status-bar">
+        <span>4 - Status Bar</span>
+      </div>
+      <div class="jtg-doc-text">
+        <div class="jtg-doc-par">
+          <p>Located under the code editor, this bar displays various messages about executed commands.</p>
+          <img src="/img/doc/status-bar.png" alt="Status Bar">
+        </div>
+      </div>
+      
+      
+      <div class="jtg-doc-h2" id="c++-panel">
+        <span>5 - C++ Panel</span>
+      </div>
+      <div class="jtg-doc-text">
+        <div class="jtg-doc-par">
+        <p>Features provided in this panel are not available when executing in <i>Run</i> mode.</p>
+        </div>
+      </div>
+      <div class="jtg-doc-h3" id="variables-tab">
+        <span class="fonb">Variables Tab</span>
+        <div class="jtg-doc-sep"></div>
+      </div>
+      <div class="jtg-doc-text">
+        <div class="jtg-doc-par">
+          <img src="/img/doc/variables-tab.png" alt="Variables Tab">
+          <p>Provides a datagrid to show the program’s variables in the current execution context.</p>
+          <p>This datagrid is filled when the program pauses, and cleared when it resumes.</p>
+          <p>During a pause, program variables may be altered by editing the corresponding cell in the datagrid.</p>
+          <p id="modifiable-variable-types">Only variables of the following types may be modified:</p>
+          <ul>
+            <li>int</li>
+            <li>float</li>
+            <li>double</li>
+            <li>char</li>
+            <li>bool</li>
+            <li>std::__cxx11::string</li>
+            <li>short</li>
+            <li>long</li>
+            <li>long double</li>
+            <li>long long</li>
+            <li>wchar_t</li>
+            <li>unsigned char</li>
+            <li>signed char</li>
+            <li>unsigned int</li>
+            <li>signed int</li>
+            <li>short int</li>
+            <li>unsigned short int</li>
+            <li>signed short int</li>
+            <li>long int</li>
+            <li>signed long int</li>
+            <li>unsigned long int</li>
+            <li>signed long long</li>
+            <li>unsigned long long</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="jtg-doc-h3" id="frames-tab">
+        <span class="fonb">Frames Tab</span>
+        <div class="jtg-doc-sep"></div>
+      </div>
+      <div class="jtg-doc-text">
+        <div class="jtg-doc-par">
+          <img src="/img/doc/frames-tab.png" alt="Frames Tab">
+          <p>Provides a table to show the program’s call stack —that is, the
+          chain of function calls that have been invoked.</p>
+          <p>This table is filled when the program pauses (usually because of a
+          breakpoint being hit), and cleared when it resumes.</p>
+        </div>
+      </div>
+      
+      <div class="jtg-doc-h3" id="exprs-tab">
+        <span class="fonb">Expressions Tab</span>
+        <div class="jtg-doc-sep"></div>
+      </div>
+      <div class="jtg-doc-text">
+        <div class="jtg-doc-par">
+          <img src="/img/doc/exprs-tab.png" alt="Expressions Tab">
+          <p>Much like the variables datagrid, expressions in the datagrid are evaluated 
+          and their results shown when the program pauses.</p>
+          <p>When the program resumes, the results in the grid are cleared.</p>
+        </div>
+      </div>
+      
+      <div class="jtg-doc-h3" id="valgrind-tab">
+        <span class="fonb">Valgrind Tab</span>
+        <div class="jtg-doc-sep"></div>
+      </div>
+      <div class="jtg-doc-text">
+        <div class="jtg-doc-par">
+          <img src="/img/doc/valgrind-tab.png" alt="Valgrind Tab">
+          <p>Provides a table of memory-related errors once the program terminates.</p>
+          <p>Only avalilable when executing in <i>Valgrind</i> mode.</p>
+        </div>
+      </div>
+      
+      
+      <div class="jtg-doc-h2" id="terminal-diagnostics">
+        <span>6 - Terminal/Diagnostics</span>
+      </div>
+      <div class="jtg-doc-h3" id="terminal-tab">
+        <span class="fonb">Terminal Tab</span>
+        <div class="jtg-doc-sep"></div>
+      </div>
+      <div class="jtg-doc-text">
+        <div class="jtg-doc-par">
+          <img src="/img/doc/term-tab.png" alt="Terminal Tab">
+          <p>The <i>Terminal</i> is used to read from and write to the executing C++ program.</p>
+          <p>The <img src="/img/clear-term.png" alt="Clear Termial Button"> button clears the <i>Terminal</i>.</p>
+        </div>
+      </div>
+      <div class="jtg-doc-h3" id="diagnostics-tab">
+        <span class="fonb">Diagnostics Tab</span>
+        <div class="jtg-doc-sep"></div>
+      </div>
+      <div class="jtg-doc-text">
+        <div class="jtg-doc-par">
+          <img src="/img/doc/diagnostics-tab.png" alt="Diagnostics Tab">
+          <p>Provides a table which will display compilation errors, if any are found.</p>
+          <p>Clicking on an error row will highlight the corresponding line in the code editor.</p>
+        </div>
+      </div>
+      
+      <%> footer %>      
+    </div>
+  </body>
+</html>
